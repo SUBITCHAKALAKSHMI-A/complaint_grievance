@@ -1,0 +1,197 @@
+/* Gradient Backgrounds */
+.gradient-bg-primary {
+  background: linear-gradient(90deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%);
+}
+
+.gradient-bg-secondary {
+  background: linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+}
+
+.gradient-bg-tertiary {
+  background: linear-gradient(90deg, hsla(169, 76%, 48%, 1) 0%, hsla(67, 87%, 82%, 1) 100%);
+}
+
+.gradient-bg-radial {
+  background: radial-gradient(circle at top right, hsla(154, 100%, 76%, 0.8) 0%, hsla(234, 100%, 83%, 0.6) 50%, hsla(288, 100%, 81%, 0.4) 100%);
+}
+
+/* Gradient Text */
+.gradient-text-primary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-secondary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient Borders */
+.gradient-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+}
+
+/* Gradient Shadows */
+.gradient-shadow {
+  position: relative;
+}
+
+.gradient-shadow::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: var(--gradient-primary);
+  opacity: 0.3;
+  filter: blur(20px);
+  border-radius: inherit;
+}
+
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(-45deg, #84FFC9, #AAB2FF, #F6A9FF, #84FFC9);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Glass Morphism with Gradient */
+.glass-gradient {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+/* Gradient Cards */
+.gradient-card-1 {
+  background: linear-gradient(135deg, rgba(132, 255, 201, 0.1) 0%, rgba(170, 178, 255, 0.1) 50%, rgba(246, 169, 255, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-card-2 {
+  background: linear-gradient(135deg, rgba(66, 4, 126, 0.1) 0%, rgba(7, 244, 158, 0.1) 100%);
+  border: 1px solid rgba(66, 4, 126, 0.2);
+}
+
+.gradient-card-3 {
+  background: linear-gradient(135deg, rgba(30, 215, 181, 0.1) 0%, rgba(240, 249, 167, 0.1) 100%);
+  border: 1px solid rgba(30, 215, 181, 0.2);
+}
+
+/* Gradient Button Variants */
+.btn-gradient-primary {
+  background: var(--gradient-secondary);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-gradient-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.btn-gradient-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-gradient-secondary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.btn-gradient-outline {
+  background: transparent;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.btn-gradient-outline::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Hover Effects for Gradient Elements */
+.hover-gradient:hover {
+  background: var(--gradient-primary);
+}
+
+.hover-gradient-text:hover {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll Progress Gradient */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--gradient-primary);
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
